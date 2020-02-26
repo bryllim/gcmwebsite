@@ -20,5 +20,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
+// Assistance Routes
 Route::get('/medical', 'HomeController@medical')->name('medical')->middleware('auth');
 Route::get('/new-medical', 'HomeController@newMedical')->name('new-medical')->middleware('auth');

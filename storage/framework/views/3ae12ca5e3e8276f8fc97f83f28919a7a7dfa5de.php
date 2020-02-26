@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-md-12">
         <ol class="breadcrumb">
-            <li><a href="<?php echo e(route('assistance')); ?>"><i class="material-icons">how_to_reg</i> Financial Assistance</a></li>
+            <li><a href="<?php echo e(route('medical')); ?>"><i class="material-icons">local_hospital</i> Medical Assistance</a></li>
             <li class="active">Add New Beneficiary</li>
         </ol>
     </div>

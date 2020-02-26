@@ -121,7 +121,7 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li class="header">ASSISTANCE</li>
+                    <li class="header">FINANCIAL ASSISTANCE</li>
                     <li class="{{ ( request()->routeIs('medical') ) ? 'active' : '' }}">
                         <a href="{{ route('medical') }}">
                             <i class="material-icons">local_hospital</i>
