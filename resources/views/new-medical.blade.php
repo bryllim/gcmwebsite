@@ -13,35 +13,27 @@
     <div class="col-md-12">
         <div class="card">
             <div class="body">
-                <h2 class="card-inside-title">Basic Examples</h2>
+                <h2 class="card-inside-title"><h1>MEDICAL ASSISTANCE</h1><h4>Vicente Sotto Medical Memorial Center</h4></h2><br>
+                <h3 class="card-inside-title">Patient Information</h3>
                 <div class="row clearfix">
-                    <div class="col-sm-12">
+                    <div class="col-sm-4">
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" class="form-control" placeholder="Username">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-line">
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="text" class="form-control" placeholder="Last Name">
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <h2 class="card-inside-title">Different Widths</h2>
-                <div class="row clearfix">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" class="form-control" placeholder="col-sm-6">
+                                <input type="text" class="form-control" placeholder="First Name">
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" class="form-control" placeholder="col-sm-6">
+                                <input type="text" class="form-control" placeholder="Middle Name">
                             </div>
                         </div>
                     </div>
@@ -50,136 +42,76 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" class="form-control" placeholder="col-sm-4">
+                                <input type="text" class="form-control" placeholder="Sex">
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" class="form-control" placeholder="col-sm-4">
+                                <input type="text" class="form-control" placeholder="Civil Status">
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" class="form-control" placeholder="col-sm-4">
+                                <input type="text" class="form-control" placeholder="Contact No.">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row clearfix">
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                            <div class="form-line">
-                                <input type="text" class="form-control" placeholder="col-sm-3">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                            <div class="form-line">
-                                <input type="text" class="form-control" placeholder="col-sm-3">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                            <div class="form-line">
-                                <input type="text" class="form-control" placeholder="col-sm-3">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                            <div class="form-line">
-                                <input type="text" class="form-control" placeholder="col-sm-3">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="card-inside-title">Different Sizes</h2>
-                <div class="row clearfix">
-                    <div class="col-sm-12">
-                        <div class="form-group form-group-lg">
-                            <div class="form-line">
-                                <input type="text" class="form-control" placeholder="Large Input">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-line">
-                                <input type="text" class="form-control" placeholder="Default Input">
-                            </div>
-                        </div>
-                        <div class="form-group form-group-sm">
-                            <div class="form-line">
-                                <input type="text" class="form-control" placeholder="Small Input">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="card-inside-title">Floating Label Examples</h2>
-                <div class="row clearfix">
-                    <div class="col-sm-12">
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <input type="text" class="form-control">
-                                <label class="form-label">Username</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <input type="password" class="form-control">
-                                <label class="form-label">Password</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="form-group form-float form-group-lg">
-                            <div class="form-line">
-                                <input type="text" class="form-control">
-                                <label class="form-label">Large Input</label>
-                            </div>
-                        </div>
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <input type="text" class="form-control">
-                                <label class="form-label">Default Input</label>
-                            </div>
-                        </div>
-                        <div class="form-group form-float form-group-sm">
-                            <div class="form-line">
-                                <input type="text" class="form-control">
-                                <label class="form-label">Small Input</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="card-inside-title">Input Status</h2>
                 <div class="row clearfix">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <div class="form-line focused">
-                                <input type="text" class="form-control" value="Focused" placeholder="Statu Focused">
+                            <div class="form-line">
+                                <input type="text" class="form-control" placeholder="Barangay">
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <div class="form-line disabled">
-                                <input type="text" class="form-control" placeholder="Disabled" disabled="">
+                            <div class="form-line">
+                                <input type="text" class="form-control" placeholder="Street Address/Purok">
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input type="text" class="form-control" placeholder="Province">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                                <div class="form-line">
+                                     <input type="text" class="form-control" placeholder="City/Municipality">
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="row clearfix"> 
+                       <form class="form-inline" action="">
+                           <div class="col-sm-12">
+                           <div class="form-group">
+                               <label for="">Enter Medical Assistance Amount</label>
+                               <input type="text" name="" id="">                                
+                            </div>
+                           </div>
+                       </form>
+                    </div>            
                 </div>
             </div>
         </div>
     </div>
 </div>
+<style>
+    input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+}
+</style>
 @endsection
