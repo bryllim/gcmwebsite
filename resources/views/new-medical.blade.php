@@ -13,8 +13,8 @@
     <div class="col-md-12">
         <div class="card">
             <div class="body">
-                <h2 class="card-inside-title"><h1>MEDICAL ASSISTANCE</h1><h4>Vicente Sotto Medical Memorial Center</h4></h2><br>
                 <h3 class="card-inside-title">Patient Information</h3>
+                <hr>
                 <div class="row clearfix">
                     <div class="col-sm-4">
                         <div class="form-group">
@@ -41,19 +41,25 @@
                 <div class="row clearfix">
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <div class="form-line">
-                                <input type="text" class="form-control" placeholder="Sex">
-                            </div>
+                            <label for="sex">Sex: &nbsp;</label>
+                            <select class="selectpicker" id="sex">
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-5">
                         <div class="form-group">
-                            <div class="form-line">
-                                <input type="text" class="form-control" placeholder="Civil Status">
-                            </div>
+                            <label for="sex">Civil Status: &nbsp;</label>
+                            <select class="selectpicker" id="civil_status">
+                                <option>Single</option>
+                                <option>Married</option>
+                                <option>Divorced/Annulled</option>
+                                <option>Widowed</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <div class="form-group">
                             <div class="form-line">
                                 <input type="text" class="form-control" placeholder="Contact No.">
@@ -91,13 +97,10 @@
                             </div>
                          </div>
                     </div>
-                    <div class="row clearfix"> 
+                    <div class="row"> 
                        <form class="form-inline" action="">
                            <div class="col-sm-12">
-                           <div class="form-group">
-                               <label for="">Enter Medical Assistance Amount</label>
-                               <input type="text" name="" id="">                                
-                            </div>
+                            <button type="button" class="btn btn-block btn-lg btn-primary waves-effect">Submit</button>
                            </div>
                        </form>
                     </div>            
