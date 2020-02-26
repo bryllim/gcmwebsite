@@ -38,21 +38,21 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a href="#">Dela Cruz</a></td>
+                            <td><a href="{{ route('view-medical') }}">Dela Cruz</a></td>
                             <td>Juan</td>
                             <td>St. Luke's</td>
                             <td><small>₱</small> 25,500.00</td>
                             <td><span class="label bg-green">Approved</span></td>
                         </tr>
                         <tr>
-                            <td><a href="#">Militante</a></td>
+                            <td><a href="{{ route('view-medical') }}">Militante</a></td>
                             <td>Cris Lawrence Adrian</td>
                             <td>Chong Hua</td>
                             <td><small>₱</small> 28,900.00</td>
                             <td><span class="label bg-blue">Pending</span></td>
                         </tr>
                         <tr>
-                            <td><a href="#">Lim</a></td>
+                            <td><a href="{{ route('view-medical') }}">Lim</a></td>
                             <td>Bryl Kezter</td>
                             <td>Vicente Sotto</td>
                             <td><small>₱</small> 20,500.00</td>

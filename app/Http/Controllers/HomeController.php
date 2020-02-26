@@ -36,4 +36,8 @@ class HomeController extends Controller
         return view('new-medical');
     }
 
+    public function viewMedical()
+    {
+        return view('view-medical');
+    }
 }

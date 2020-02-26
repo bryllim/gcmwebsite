@@ -109,12 +109,4 @@
         </div>
     </div>
 </div>
-<style>
-    input {
-  border: 0;
-  outline: 0;
-  background: transparent;
-  border-bottom: 1px solid black;
-}
-</style>
 @endsection
