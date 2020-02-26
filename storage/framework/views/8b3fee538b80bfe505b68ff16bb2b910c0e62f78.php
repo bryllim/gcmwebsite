@@ -107,7 +107,7 @@
             <!-- User Info -->
             <div style="padding: 20px;">
                 <small>Currently logged in as:</small>
-                <h3 style="margin-top:10px">Sonny Lagon</h3>
+                <h3 style="margin-top:10px">Clark Dale Morpos</h3>
             </div>
             <!-- #User Info -->
             <!-- Menu -->
@@ -121,10 +121,23 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li class="<?php echo e(( request()->routeIs('assistance') ) ? 'active' : ''); ?>">
-                        <a href="<?php echo e(route('assistance')); ?>">
-                            <i class="material-icons">how_to_reg</i>
-                            <span>Financial Assistance</span>
+                    <li class="header">ASSISTANCE</li>
+                    <li class="<?php echo e(( request()->routeIs('medical') ) ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('medical')); ?>">
+                            <i class="material-icons">local_hospital</i>
+                            <span>Medical</span>
+                        </a>
+                    </li>
+                    <li class="<?php echo e(( request()->routeIs('home') ) ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('home')); ?>">
+                            <i class="material-icons">school</i>
+                            <span>Education</span>
+                        </a>
+                    </li>
+                    <li class="<?php echo e(( request()->routeIs('home') ) ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('home')); ?>">
+                            <i class="material-icons">airline_seat_individual_suite</i>
+                            <span>Burial</span>
                         </a>
                     </li>
                     <li class="header">OTHERS</li>

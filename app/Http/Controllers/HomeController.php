@@ -26,14 +26,14 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function assistance()
+    public function medical()
     {
-        return view('assistance');
+        return view('medical');
     }
 
-    public function newBeneficiary()
+    public function newMedical()
     {
-        return view('new-beneficiary');
+        return view('new-medical');
     }
 
 }

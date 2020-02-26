@@ -19,5 +19,6 @@ Route::get('/', ['middleware' => 'guest', function()
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-Route::get('/assistance', 'HomeController@assistance')->name('assistance')->middleware('auth');
-Route::get('/new-beneficiary', 'HomeController@newBeneficiary')->name('new-beneficiary')->middleware('auth');
+
+Route::get('/medical', 'HomeController@medical')->name('medical')->middleware('auth');
+Route::get('/new-medical', 'HomeController@newMedical')->name('new-medical')->middleware('auth');
