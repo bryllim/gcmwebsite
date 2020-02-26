@@ -27,21 +27,21 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Dela Cruz</td>
+                            <td><a href="#">Dela Cruz</a></td>
                             <td>Juan</td>
                             <td>Medical</td>
                             <td><small>₱</small> 25,500.00</td>
                             <td><span class="label bg-green">Approved</span></td>
                         </tr>
                         <tr>
-                            <td>Militante</td>
+                            <td><a href="#">Militante</a></td>
                             <td>Cris Lawrence Adrian</td>
                             <td>Burial</td>
                             <td><small>₱</small> 28,900.00</td>
                             <td><span class="label bg-blue">Pending</span></td>
                         </tr>
                         <tr>
-                            <td>Lim</td>
+                            <td><a href="#">Lim</a></td>
                             <td>Bryl Kezter</td>
                             <td>Education</td>
                             <td><small>₱</small> 20,500.00</td>
