@@ -28,16 +28,46 @@ class HomeController extends Controller
 
     public function medical()
     {
-        return view('medical');
+        return view('medical.medical');
     }
 
     public function newMedical()
     {
-        return view('new-medical');
+        return view('medical.new-medical');
     }
 
     public function viewMedical()
     {
-        return view('view-medical');
+        return view('medical.view-medical');
+    }
+
+    public function education()
+    {
+        return view('education.education');
+    }
+
+    public function newEducation()
+    {
+        return view('education.new-education');
+    }
+
+    public function viewEducation()
+    {
+        return view('education.view-education');
+    }
+
+    public function burial()
+    {
+        return view('burial.burial');
+    }
+
+    public function newburial()
+    {
+        return view('burial.new-burial');
+    }
+
+    public function viewburial()
+    {
+        return view('burial.view-burial');
     }
 }

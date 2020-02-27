@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-md-12">
         <ol class="breadcrumb">
-            <li><a href="<?php echo e(route('medical')); ?>"><i class="material-icons">local_hospital</i> Medical Assistance</a></li>
+            <li><a href="<?php echo e(route('burial')); ?>"><i class="material-icons">airline_seat_individual_suite</i> Burial Assistance</a></li>
             <li class="active">Add New Beneficiary</li>
         </ol>
     </div>
@@ -11,7 +11,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="body">
-                <h3 class="card-inside-title">Patient Information</h3>
+                <h3 class="card-inside-title">Burial Information</h3>
                 <hr>
                 <div class="row clearfix">
                     <div class="col-sm-4">
@@ -108,4 +108,4 @@
     </div>
 </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\akbis_master\resources\views/new-medical.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\akbis_master\resources\views/burial/new-burial.blade.php ENDPATH**/ ?>

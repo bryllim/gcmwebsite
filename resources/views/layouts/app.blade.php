@@ -129,14 +129,14 @@
                             <span>Medical</span>
                         </a>
                     </li>
-                    <li class="{{ ( request()->routeIs('home') ) ? 'active' : '' }}">
-                        <a href="{{ route('home') }}">
+                    <li class="{{ ( request()->routeIs('education') ) ? 'active' : '' }}">
+                        <a href="{{ route('education') }}">
                             <i class="material-icons">school</i>
                             <span>Education</span>
                         </a>
                     </li>
-                    <li class="{{ ( request()->routeIs('home') ) ? 'active' : '' }}">
-                        <a href="{{ route('home') }}">
+                    <li class="{{ ( request()->routeIs('burial') ) ? 'active' : '' }}">
+                        <a href="{{ route('burial') }}">
                             <i class="material-icons">airline_seat_individual_suite</i>
                             <span>Burial</span>
                         </a>

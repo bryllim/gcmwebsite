@@ -41,6 +41,7 @@
     <script src="<?php echo e(asset('plugins/bootstrap/js/bootstrap.js')); ?>"></script>
 
     <!-- Select Plugin Js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
     <script src="<?php echo e(asset('plugins/bootstrap-select/js/bootstrap-select.js')); ?>"></script>
 
     <!-- Slimscroll Plugin Js -->
@@ -128,14 +129,14 @@
                             <span>Medical</span>
                         </a>
                     </li>
-                    <li class="<?php echo e(( request()->routeIs('home') ) ? 'active' : ''); ?>">
-                        <a href="<?php echo e(route('home')); ?>">
+                    <li class="<?php echo e(( request()->routeIs('education') ) ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('education')); ?>">
                             <i class="material-icons">school</i>
                             <span>Education</span>
                         </a>
                     </li>
-                    <li class="<?php echo e(( request()->routeIs('home') ) ? 'active' : ''); ?>">
-                        <a href="<?php echo e(route('home')); ?>">
+                    <li class="<?php echo e(( request()->routeIs('burial') ) ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('burial')); ?>">
                             <i class="material-icons">airline_seat_individual_suite</i>
                             <span>Burial</span>
                         </a>
