@@ -12,9 +12,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => "Bryl Kezter Lim",
-            'username' => "bryllim",
-            'password' => Hash::make('password'),
+            'name' => "Clark Dale Morpos",
+            'username' => "admin",
+            'password' => Hash::make('admin'),
         ]);
     }
 }
