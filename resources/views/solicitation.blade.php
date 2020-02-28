@@ -2,6 +2,26 @@
 
 @section('content')
 <div class="row">
+    <div class="col-md-3">
+        <a type="button" class="btn btn-primary waves-effect btn-block" href="{{ route('new-medical') }}">
+            <i class="material-icons">add</i>
+            <span><strong>Add New Record</strong></span>
+        </a>
+    </div>
+    <div class="col-md-6">
+        <button type="button" class="btn btn-secondary btn-block" style="pointer-events: none;">
+            <i class="material-icons text-muted">account_balance_wallet</i>
+            <span>Total Amount Released:&nbsp; <small>₱</small> <b>2,235,500.00</b></span>
+        </button>
+    </div>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-secondary btn-block" style="pointer-events: none;">
+            <i class="material-icons text-muted">card_giftcard</i>
+            <span>Solicitations Given:&nbsp; <b>145</b></span>
+        </button>
+    </div>
+</div>
+<div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="body table-responsive">
