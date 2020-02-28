@@ -37,15 +37,20 @@
                         <thead>
                             <tr>
                                 <th>Location</th>
-                                <th>Current Budget</th>
+                                <th>Available Budget</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Cebu Hospital</td>
-                                <td><small>₱</small> <strong>12,023,323.10</strong></td>
+                                <td style="vertical-align:middle">Cebu Hospital</td>
                                 <td>
+                                    <small>₱ <strong>2,033,342.00</strong> out of ₱ <strong>3,000,000.00</strong></small>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 67%"></div>
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle">
                                     <button type="button" class="btn bg-indigo waves-effect">+
                                     </button>
                                     <button type="button" class="btn bg-indigo waves-effect">-
@@ -53,9 +58,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Bohol Hospital</td>
-                                <td><small>₱</small> <strong>2,033,342.00</strong></td>
+                                <td style="vertical-align:middle">NCR Hospital</td>
                                 <td>
+                                    <small>₱ <strong>733,569.00</strong> out of ₱ <strong>4,000,000.00</strong></small>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 18%"></div>
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle">
                                     <button type="button" class="btn bg-indigo waves-effect">+
                                     </button>
                                     <button type="button" class="btn bg-indigo waves-effect">-
@@ -63,9 +73,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>NCR Hospital</td>
-                                <td><small>₱</small> <strong>523,324.90</strong></td>
+                                <td style="vertical-align:middle">Bohol Hospital</td>
                                 <td>
+                                    <small>₱ <strong>33,112.00</strong> out of ₱ <strong>1,000,000.00</strong></small>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-red" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 8%"></div>
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle">
                                     <button type="button" class="btn bg-indigo waves-effect">+
                                     </button>
                                     <button type="button" class="btn bg-indigo waves-effect">-
@@ -128,9 +143,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Education</td>
-                                <td><small>₱</small> <strong>12,023,323.10</strong></td>
+                                <td style="vertical-align:middle">Education</td>
                                 <td>
+                                    <small>₱ <strong>33,112.00</strong> out of ₱ <strong>1,000,000.00</strong></small>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-red" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 8%"></div>
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle">
                                     <button type="button" class="btn bg-indigo waves-effect">+
                                     </button>
                                     <button type="button" class="btn bg-indigo waves-effect">-
@@ -138,9 +158,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Burial</td>
-                                <td><small>₱</small> <strong>2,033,342.00</strong></td>
+                                <td style="vertical-align:middle">Burial</td>
                                 <td>
+                                    <small>₱ <strong>933,112.00</strong> out of ₱ <strong>1,000,000.00</strong></small>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 93%"></div>
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle">
                                     <button type="button" class="btn bg-indigo waves-effect">+
                                     </button>
                                     <button type="button" class="btn bg-indigo waves-effect">-
@@ -164,7 +189,7 @@
         </div>
     </div>
 </div>
-<script>
+<script>    
     var ctx = document.getElementById('budget_allocation').getContext('2d');
 
     //doughnut chart data
