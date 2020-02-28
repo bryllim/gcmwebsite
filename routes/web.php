@@ -20,6 +20,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
+// Solicitation
+Route::get('/solicitation', 'HomeController@solicitation')->name('solicitation')->middleware('auth');
+
 // Assistance Routes
 
 // Medical
