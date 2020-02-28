@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 // Solicitation
 Route::get('/solicitation', 'HomeController@solicitation')->name('solicitation')->middleware('auth');
+Route::get('/new-solicitation', 'HomeController@newSolicitation')->name('new-solicitation')->middleware('auth');
 
 // Assistance Routes
 

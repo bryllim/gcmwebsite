@@ -28,7 +28,12 @@ class HomeController extends Controller
 
     public function solicitation()
     {
-        return view('solicitation');
+        return view('solicitation.solicitation');
+    }
+
+    public function newSolicitation()
+    {
+        return view('solicitation.new-solicitation');
     }
 
     public function medical()

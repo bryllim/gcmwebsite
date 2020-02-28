@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-3">
-        <a type="button" class="btn btn-primary waves-effect btn-block" href="{{ route('new-medical') }}">
+        <a type="button" class="btn btn-primary waves-effect btn-block" href="{{ route('new-solicitation') }}">
             <i class="material-icons">add</i>
             <span><strong>Add New Record</strong></span>
         </a>
@@ -36,7 +36,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for($i = 0; $i < 10; $i++)
                         <tr>
                             <td>Rodrigo Roa Duterte</td>
                             <td>For the cost of the barangay fiesta</td>
@@ -55,7 +54,6 @@
                             <td>Jan 1, 2020</td>
                             <td><small>₱</small> 25,500.00</td>
                         </tr>
-                        @endfor
                     </tbody>
                 </table>
             </div>
