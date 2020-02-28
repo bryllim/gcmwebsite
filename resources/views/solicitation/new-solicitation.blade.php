@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-12">
         <ol class="breadcrumb">
-            <li><a href="{{ route('medical') }}"><i class="material-icons">card_giftcard</i> Solicitation</a></li>
+            <li><a href="{{ route('solicitation') }}"><i class="material-icons">card_giftcard</i> Solicitation</a></li>
             <li class="active">Add New Solicitation</li>
         </ol>
     </div>
