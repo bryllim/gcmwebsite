@@ -50,14 +50,8 @@
     <!-- Waves Effect Plugin Js -->
     <script src="{{ asset('plugins/node-waves/waves.js') }}"></script>
 
-    <!-- Jquery CountTo Plugin Js -->
-    <script src="{{ asset('plugins/jquery-countto/jquery.countTo.js') }}"></script>
-
     <!-- ChartJs -->
     <script src="{{ asset('plugins/chartjs/Chart.bundle.js') }}"></script>
-
-    <!-- Sparkline Chart Plugin Js -->
-    <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.js') }}"></script>
 
     <!-- Custom Js -->
     <script src="{{ asset('js/admin.js') }}"></script>
@@ -76,7 +70,7 @@
     <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
-                <div class="spinner-layer pl-blue">
+                <div class="spinner-layer pl-red">
                     <div class="circle-clipper left">
                         <div class="circle"></div>
                     </div>
@@ -119,6 +113,18 @@
                         <a href="{{ route('home') }}">
                             <i class="material-icons">dashboard</i>
                             <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="{{ ( request()->routeIs('members') ) ? 'active' : '' }}">
+                        <a href="{{ route('home') }}">
+                            <i class="material-icons">group</i>
+                            <span>Members</span>
+                        </a>
+                    </li>
+                    <li class="{{ ( request()->routeIs('supplements') ) ? 'active' : '' }}">
+                        <a href="{{ route('home') }}">
+                            <i class="material-icons">local_drink</i>
+                            <span>Supplements</span>
                         </a>
                     </li>
                     <li class="header">OTHERS</li>

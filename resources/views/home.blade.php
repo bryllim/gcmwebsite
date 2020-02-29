@@ -35,5 +35,41 @@
             </div>
         </div>
     </div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <b>Monthly Statistics</b>
+            </div>
+            <div class="body">
+                <canvas id="monthlyStatistics"></canvas>
+            </div>
+        </div>
+    </div>
 </div>
+<script>
+var ctx = document.getElementById('monthlyStatistics').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        datasets: [{
+            label: 'Active Members',
+            backgroundColor: 'red',
+            borderColor: 'black',
+            data: [0, 10, 5, 2, 20, 30, 45, 38, 23, 35, 56, 39]
+        },{
+            label: 'Gym Revenue',
+            backgroundColor: 'maroon',
+            borderColor: 'black',
+            data: [39, 52, 23, 34, 20, 20, 35, 58, 13, 33, 55, 59]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
 @endsection
