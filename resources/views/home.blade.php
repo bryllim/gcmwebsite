@@ -25,7 +25,7 @@
                             <i class="material-icons">more_vert</i>
                         </a>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);" class=" waves-effect waves-block">Add a new hospital</a></li>
+                            <li><a href="javascript:void(0);" class=" waves-effect waves-block" data-toggle="modal" data-target="#newHospital">Add a new hospital</a></li>
                             <li><a href="javascript:void(0);" class=" waves-effect waves-block">Remove a hospital</a></li>
                         </ul>
                     </li>
@@ -51,7 +51,7 @@
                                     </div>
                                 </td>
                                 <td style="vertical-align:middle">
-                                    <button type="button" class="btn bg-indigo waves-effect">+
+                                    <button type="button" class="btn bg-indigo waves-effect" data-toggle="modal" data-target="#addBudget">+
                                     </button>
                                     <button type="button" class="btn bg-indigo waves-effect">-
                                     </button>
@@ -185,6 +185,66 @@
             </div>
             <div class="body"><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
                 <canvas id="budget_allocation" height="220" width="440" style="display: block; width: 440px; height: 220px;"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Add Budget Modal -->
+<div class="modal fade" id="addBudget" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <hr>
+                <button type="button" class="btn btn-primary btn-block waves-effect"><b>TOP UP TO FULL AMOUNT</b></button>
+                <hr>
+                <p style="text-align:center">or</p>
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input type="number" class="form-control" placeholder="Enter the specific amount to add...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CANCEL</button>
+                
+                <button type="button" class="btn btn-link waves-effect">SAVE CHANGES</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- New Hospital Modal -->
+<div class="modal fade" id="newHospital" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="defaultModalLabel">Add New Hospital</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input type="text" class="form-control" placeholder="Enter hospital name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input type="number" class="form-control" placeholder="Enter hospital budget">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CANCEL</button>
+                
+                <button type="button" class="btn btn-link waves-effect">SAVE CHANGES</button>
             </div>
         </div>
     </div>
