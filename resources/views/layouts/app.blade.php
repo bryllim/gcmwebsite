@@ -116,7 +116,7 @@
                         </a>
                     </li>
                     <li class="{{ ( request()->routeIs('members') ) ? 'active' : '' }}">
-                        <a href="{{ route('home') }}">
+                        <a href="{{ route('members') }}">
                             <i class="material-icons">group</i>
                             <span>Members</span>
                         </a>

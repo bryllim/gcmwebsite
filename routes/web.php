@@ -19,3 +19,7 @@ Route::get('/', ['middleware' => 'guest', function()
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/members', function(){
+    return view('members');
+})->name('members')->middleware('auth');
+
