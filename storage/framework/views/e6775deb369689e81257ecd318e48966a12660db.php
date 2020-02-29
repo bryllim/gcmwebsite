@@ -15,60 +15,60 @@
 
     <!-- Bootstrap Core Css -->
     
-    <link href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('plugins/bootstrap/css/bootstrap.css')); ?>" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.min.css')); ?>">
 
     <!-- Waves Effect Css -->
-    <link href="{{ asset('plugins/node-waves/waves.css') }}" rel="stylesheet" />
+    <link href="<?php echo e(asset('plugins/node-waves/waves.css')); ?>" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="{{ asset('plugins/animate-css/animate.css') }}" rel="stylesheet" />
+    <link href="<?php echo e(asset('plugins/animate-css/animate.css')); ?>" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
-    <link href="{{ asset('plugins/morrisjs/morris.css') }}" rel="stylesheet" />
+    <link href="<?php echo e(asset('plugins/morrisjs/morris.css')); ?>" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('css/style.css')); ?>" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="{{ asset('css/themes/all-themes.css') }}" rel="stylesheet" />
+    <link href="<?php echo e(asset('css/themes/all-themes.css')); ?>" rel="stylesheet" />
 
     <!-- Jquery Core Js -->
-    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    <script src="<?php echo e(asset('plugins/jquery/jquery.min.js')); ?>"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
+    <script src="<?php echo e(asset('plugins/bootstrap/js/bootstrap.js')); ?>"></script>
 
     <!-- Select Plugin Js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
-    <script src="{{ asset('plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
+    <script src="<?php echo e(asset('plugins/bootstrap-select/js/bootstrap-select.js')); ?>"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="{{ asset('plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
+    <script src="<?php echo e(asset('plugins/jquery-slimscroll/jquery.slimscroll.js')); ?>"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="{{ asset('plugins/node-waves/waves.js') }}"></script>
+    <script src="<?php echo e(asset('plugins/node-waves/waves.js')); ?>"></script>
 
     <!-- Jquery CountTo Plugin Js -->
-    <script src="{{ asset('plugins/jquery-countto/jquery.countTo.js') }}"></script>
+    <script src="<?php echo e(asset('plugins/jquery-countto/jquery.countTo.js')); ?>"></script>
 
     <!-- ChartJs -->
-    <script src="{{ asset('plugins/chartjs/Chart.bundle.js') }}"></script>
+    <script src="<?php echo e(asset('plugins/chartjs/Chart.bundle.js')); ?>"></script>
 
     <!-- Sparkline Chart Plugin Js -->
-    <script src="{{ asset('plugins/jquery-sparkline/jquery.sparkline.js') }}"></script>
+    <script src="<?php echo e(asset('plugins/jquery-sparkline/jquery.sparkline.js')); ?>"></script>
 
     <!-- Custom Js -->
-    <script src="{{ asset('js/admin.js') }}"></script>
-    <script src="{{ asset('js/pages/index.js') }}"></script>
+    <script src="<?php echo e(asset('js/admin.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/pages/index.js')); ?>"></script>
 
     <!-- Demo Js -->
-    <script src="{{ asset('js/demo.js') }}"></script>
+    <script src="<?php echo e(asset('js/demo.js')); ?>"></script>
 
     <!-- Datatable Js -->
-    <script type="text/javascript" charset="utf8" src="{{ asset('plugins/jquery-datatable/jquery.dataTables.js') }}"></script>
-    <script type="text/javascript" charset="utf8" src="{{ asset('plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.min.js') }}"></script>
+    <script type="text/javascript" charset="utf8" src="<?php echo e(asset('plugins/jquery-datatable/jquery.dataTables.js')); ?>"></script>
+    <script type="text/javascript" charset="utf8" src="<?php echo e(asset('plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.min.js')); ?>"></script>
 </head>
 
 <body class="theme-red">
@@ -97,7 +97,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="bars"></a>
-                <img src="{{ asset('images/logo.png') }}" alt="" style="height:auto; width:300px; margin-top:-5px">
+                <img src="<?php echo e(asset('images/logo.png')); ?>" alt="" style="height:auto; width:300px; margin-top:-5px">
             </div>
         </div>
     </nav>
@@ -115,22 +115,22 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MENU</li>
-                    <li class="{{ ( request()->routeIs('home') ) ? 'active' : '' }}">
-                        <a href="{{ route('home') }}">
+                    <li class="<?php echo e(( request()->routeIs('home') ) ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('home')); ?>">
                             <i class="material-icons">dashboard</i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li class="header">OTHERS</li>
                     <li>
-                        <a href="{{ route('logout') }}"
+                        <a href="<?php echo e(route('logout')); ?>"
                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                             <i class="material-icons">input</i>
                             <span>Logout</span>
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
+                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                            <?php echo csrf_field(); ?>
                         </form>
                     </li>
                 </ul>
@@ -139,7 +139,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2020 <a href="{{ route('home') }}">California Fitness Gym</a>.
+                    &copy; 2020 <a href="<?php echo e(route('home')); ?>">California Fitness Gym</a>.
                 </div>
                 <div class="version">
                     Powered by <b>Zenisus Software Solutions</b>
@@ -152,9 +152,10 @@
 
     <section class="content">
         <div class="container-fluid">
-            @yield('content')
+            <?php echo $__env->yieldContent('content'); ?>
         </div>
     </section>
 </body>
 
 </html>
+<?php /**PATH C:\xampp\htdocs\california_gym\resources\views/layouts/app.blade.php ENDPATH**/ ?>

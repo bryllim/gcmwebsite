@@ -1,9 +1,7 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="row">
     <div class="col-md-3">
-        <a type="button" class="btn btn-primary waves-effect btn-block" href="{{ route('new-solicitation') }}">
+        <a type="button" class="btn btn-primary waves-effect btn-block" href="<?php echo e(route('new-solicitation')); ?>">
             <i class="material-icons">add</i>
             <span><strong>Add New Record</strong></span>
         </a>
@@ -65,4 +63,5 @@
         "bLengthChange": false,
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\california_gym\resources\views/solicitation/solicitation.blade.php ENDPATH**/ ?>

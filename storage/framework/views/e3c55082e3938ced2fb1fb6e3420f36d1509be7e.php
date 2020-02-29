@@ -13,16 +13,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('plugins/bootstrap/css/bootstrap.css')); ?>" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="{{ asset('plugins/node-waves/waves.css') }}" rel="stylesheet" />
+    <link href="<?php echo e(asset('plugins/node-waves/waves.css')); ?>" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="{{ asset('plugins/animate-css/animate.css') }}" rel="stylesheet" />
+    <link href="<?php echo e(asset('plugins/animate-css/animate.css')); ?>" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('css/style.css')); ?>" rel="stylesheet">
 </head>
 
 <body class="login-page bg-white">
@@ -30,23 +30,37 @@
         <div class="logo text-center">=
         <h5 class="col-black">CALIFORNIA FITNESS GYM - Management System</h5>
 
-        @error('username')
+        <?php $__errorArgs = ['username'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
             <div class="alert alert-danger">
                 <strong>Error!</strong> Invalid username/password.
             </div>
-        @enderror
-        @error('password')
+        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+        <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
              <div class="alert alert-danger">
                 <strong>Error!</strong> Invalid password.
             </div>
-        @enderror
+        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
 
         </div>
         <div class="card">
             <div class="body">
 
-                <form id="sign_in" method="POST" action="{{ route('login') }}">
-                @csrf
+                <form id="sign_in" method="POST" action="<?php echo e(route('login')); ?>">
+                <?php echo csrf_field(); ?>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
@@ -75,20 +89,20 @@
     </div>
 
     <!-- Jquery Core Js -->
-    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    <script src="<?php echo e(asset('plugins/jquery/jquery.min.js')); ?>"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
+    <script src="<?php echo e(asset('plugins/bootstrap/js/bootstrap.js')); ?>"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="{{ asset('plugins/node-waves/waves.js') }}"></script>
+    <script src="<?php echo e(asset('plugins/node-waves/waves.js')); ?>"></script>
 
     <!-- Validation Plugin Js -->
-    <script src="{{ asset('plugins/jquery-validation/jquery.validate.js') }}"></script>
+    <script src="<?php echo e(asset('plugins/jquery-validation/jquery.validate.js')); ?>"></script>
 
     <!-- Custom Js -->
-    <script src="{{ asset('js/admin.js') }}"></script>
-    <script src="{{ asset('js/pages/examples/sign-in.js') }}"></script>
+    <script src="<?php echo e(asset('js/admin.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/pages/examples/sign-in.js')); ?>"></script>
 </body>
 
-</html>
+</html><?php /**PATH C:\xampp\htdocs\california_gym\resources\views/welcome.blade.php ENDPATH**/ ?>
