@@ -108,18 +108,23 @@
             <!-- User Info -->
             <div style="padding: 20px;">
                 <small>Currently logged in as:</small>
-                <h3 style="margin-top:10px">Clark Dale Morpos</h3>
+                <h3 style="margin-top:10px; margin-bottom: 0">Clark Dale Morpos</h3>
             </div>
             <!-- #User Info -->
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
                     <li class="header">MENU</li>
-                    
                     <li class="<?php echo e(( request()->routeIs('home') ) ? 'active' : ''); ?>">
                         <a href="<?php echo e(route('home')); ?>">
                             <i class="material-icons">dashboard</i>
                             <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="<?php echo e(( request()->routeIs('solicitation') ) ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('solicitation')); ?>">
+                            <i class="material-icons">card_giftcard</i>
+                            <span>Solicitation</span>
                         </a>
                     </li>
                     <li class="header">FINANCIAL ASSISTANCE</li>

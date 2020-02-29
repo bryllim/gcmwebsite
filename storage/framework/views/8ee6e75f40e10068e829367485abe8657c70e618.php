@@ -23,7 +23,7 @@
                             <i class="material-icons">more_vert</i>
                         </a>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);" class=" waves-effect waves-block">Add a new hospital</a></li>
+                            <li><a href="javascript:void(0);" class=" waves-effect waves-block" data-toggle="modal" data-target="#newHospital">Add a new hospital</a></li>
                             <li><a href="javascript:void(0);" class=" waves-effect waves-block">Remove a hospital</a></li>
                         </ul>
                     </li>
@@ -35,15 +35,35 @@
                         <thead>
                             <tr>
                                 <th>Location</th>
-                                <th>Current Budget</th>
+                                <th>Available Budget</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Cebu Hospital</td>
-                                <td><small>₱</small> <strong>12,023,323.10</strong></td>
+                                <td style="vertical-align:middle">Cebu Hospital</td>
                                 <td>
+                                    <small>₱ <strong>2,033,342.00</strong> out of ₱ <strong>3,000,000.00</strong></small>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 67%"></div>
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle">
+                                    <button type="button" class="btn bg-indigo waves-effect" data-toggle="modal" data-target="#addBudget">+
+                                    </button>
+                                    <button type="button" class="btn bg-indigo waves-effect">-
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:middle">NCR Hospital</td>
+                                <td>
+                                    <small>₱ <strong>733,569.00</strong> out of ₱ <strong>4,000,000.00</strong></small>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 18%"></div>
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle">
                                     <button type="button" class="btn bg-indigo waves-effect">+
                                     </button>
                                     <button type="button" class="btn bg-indigo waves-effect">-
@@ -51,19 +71,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Bohol Hospital</td>
-                                <td><small>₱</small> <strong>2,033,342.00</strong></td>
+                                <td style="vertical-align:middle">Bohol Hospital</td>
                                 <td>
-                                    <button type="button" class="btn bg-indigo waves-effect">+
-                                    </button>
-                                    <button type="button" class="btn bg-indigo waves-effect">-
-                                    </button>
+                                    <small>₱ <strong>33,112.00</strong> out of ₱ <strong>1,000,000.00</strong></small>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-red" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 8%"></div>
+                                    </div>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>NCR Hospital</td>
-                                <td><small>₱</small> <strong>523,324.90</strong></td>
-                                <td>
+                                <td style="vertical-align:middle">
                                     <button type="button" class="btn bg-indigo waves-effect">+
                                     </button>
                                     <button type="button" class="btn bg-indigo waves-effect">-
@@ -126,9 +141,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Education</td>
-                                <td><small>₱</small> <strong>12,023,323.10</strong></td>
+                                <td style="vertical-align:middle">Education</td>
                                 <td>
+                                    <small>₱ <strong>33,112.00</strong> out of ₱ <strong>1,000,000.00</strong></small>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-red" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 8%"></div>
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle">
                                     <button type="button" class="btn bg-indigo waves-effect">+
                                     </button>
                                     <button type="button" class="btn bg-indigo waves-effect">-
@@ -136,9 +156,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Burial</td>
-                                <td><small>₱</small> <strong>2,033,342.00</strong></td>
+                                <td style="vertical-align:middle">Burial</td>
                                 <td>
+                                    <small>₱ <strong>933,112.00</strong> out of ₱ <strong>1,000,000.00</strong></small>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 93%"></div>
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle">
                                     <button type="button" class="btn bg-indigo waves-effect">+
                                     </button>
                                     <button type="button" class="btn bg-indigo waves-effect">-
@@ -162,7 +187,67 @@
         </div>
     </div>
 </div>
-<script>
+<!-- Add Budget Modal -->
+<div class="modal fade" id="addBudget" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <hr>
+                <button type="button" class="btn btn-primary btn-block waves-effect"><b>TOP UP TO FULL AMOUNT</b></button>
+                <hr>
+                <p style="text-align:center">or</p>
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input type="number" class="form-control" placeholder="Enter the specific amount to add...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CANCEL</button>
+                
+                <button type="button" class="btn btn-link waves-effect">SAVE CHANGES</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- New Hospital Modal -->
+<div class="modal fade" id="newHospital" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="defaultModalLabel">Add New Hospital</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input type="text" class="form-control" placeholder="Enter hospital name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input type="number" class="form-control" placeholder="Enter hospital budget">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CANCEL</button>
+                
+                <button type="button" class="btn btn-link waves-effect">SAVE CHANGES</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>    
     var ctx = document.getElementById('budget_allocation').getContext('2d');
 
     //doughnut chart data
