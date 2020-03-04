@@ -18,8 +18,26 @@ Route::get('/', ['middleware' => 'guest', function()
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-Route::get('/members', function(){
-    return view('members');
-})->name('members')->middleware('auth');
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+
+    Route::get('/members', function(){
+        return view('members');
+    })->name('members');
+
+    Route::get('/newmember', function(){
+        return view('newmember');
+    })->name('newmember');
+
+    Route::get('/amountdue', function(){
+        return view('receiptmember');
+    })->name('amountdue');
+
+    Route::get('/viewmember', function(){
+        return view('viewmember');
+    })->name('viewmember');
+    
+});
+
 

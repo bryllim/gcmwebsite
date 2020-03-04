@@ -91,7 +91,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="bars"></a>
-                <img src="{{ asset('images/logo.png') }}" alt="" style="height:auto; width:300px; margin-top:-5px">
+                <img src="{{ asset('images/logo.png') }}" alt="" style="height:auto; width:300px; margin-top:-5px; margin-left:50px">
             </div>
         </div>
     </nav>
@@ -121,10 +121,10 @@
                             <span>Members</span>
                         </a>
                     </li>
-                    <li class="{{ ( request()->routeIs('supplements') ) ? 'active' : '' }}">
+                    <li class="{{ ( request()->routeIs('products') ) ? 'active' : '' }}">
                         <a href="{{ route('home') }}">
                             <i class="material-icons">local_drink</i>
-                            <span>Supplements</span>
+                            <span>Products</span>
                         </a>
                     </li>
                     <li class="header">OTHERS</li>

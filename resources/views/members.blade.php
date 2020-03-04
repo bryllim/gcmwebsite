@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-3">
-        <a type="button" class="btn btn-danger waves-effect btn-block" href="#">
+        <a type="button" class="btn btn-danger waves-effect btn-block" href="{{ route('newmember') }}">
             <i class="material-icons">add</i>
             <span><strong>Add New Member</strong></span>
         </a>
@@ -32,7 +32,7 @@
                         <tr>
                             <th>Last Name</th>
                             <th>First Name</th>
-                            <th>Contact Number</th>
+                            <th>Valid Until</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>
@@ -41,21 +41,21 @@
                         <tr>
                             <td>Dela Cruz</td>
                             <td>Juan</td>
-                            <td>09055210329</td>
+                            <td>April 1, 2020</td>
                             <td><span class="label bg-green">Active</span></td>
-                            <td><b><a href="#">VIEW</a> | <a href="#">RENEW</a> | <a href="#">EDIT</a></b></td>
+                            <td><b><a href="{{ route('viewmember') }}">VIEW</a> | <a href="#">RENEW</a> | <a href="#">EDIT</a></b></td>
                         </tr>
                         <tr>
                             <td>Kumar</td>
                             <td>Ashnek Muhammed</td>
-                            <td>09055210329</td>
+                            <td>January 23, 2020</td>
                             <td><span class="label bg-red">Expired</span></td>
                             <td><b><a href="#">VIEW</a> | <a href="#">RENEW</a> | <a href="#">EDIT</a></b></td>
                         </tr>
                         <tr>
                             <td>Vishuna</td>
                             <td>Siddharta Gautma</td>
-                            <td>0905523210329</td>
+                            <td>October 2, 2020</td>
                             <td><span class="label bg-green">Active</span></td>
                             <td><b><a href="#">VIEW</a> | <a href="#">RENEW</a> | <a href="#">EDIT</a></b></td>
                         </tr>
