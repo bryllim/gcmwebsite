@@ -18,7 +18,7 @@ Route::get('/', ['middleware' => 'guest', function()
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function () {
+
 
     Route::get('/home', 'HomeController@index')->name('home');
 
@@ -38,6 +38,6 @@ Route::group(['middleware' => 'auth'], function () {
         return view('viewmember');
     })->name('viewmember');
     
-});
+
 
 
