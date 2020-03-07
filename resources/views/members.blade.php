@@ -32,6 +32,7 @@
                         <tr>
                             <th>Last Name</th>
                             <th>First Name</th>
+                            <th>Type</th>
                             <th>Valid Until</th>
                             <th>Status</th>
                             <th>Actions</th>
@@ -41,6 +42,7 @@
                         <tr>
                             <td>Dela Cruz</td>
                             <td>Juan</td>
+                            <td>Regular</td>
                             <td>April 1, 2020</td>
                             <td><span class="label bg-green">Active</span></td>
                             <td><b><a href="{{ route('viewmember') }}">VIEW</a> | <a href="#">RENEW</a> | <a href="#">EDIT</a></b></td>
@@ -48,6 +50,7 @@
                         <tr>
                             <td>Kumar</td>
                             <td>Ashnek Muhammed</td>
+                            <td>Student</td>
                             <td>January 23, 2020</td>
                             <td><span class="label bg-red">Expired</span></td>
                             <td><b><a href="#">VIEW</a> | <a href="#">RENEW</a> | <a href="#">EDIT</a></b></td>
@@ -55,6 +58,7 @@
                         <tr>
                             <td>Vishuna</td>
                             <td>Siddharta Gautma</td>
+                            <td>Student</td>
                             <td>October 2, 2020</td>
                             <td><span class="label bg-green">Active</span></td>
                             <td><b><a href="#">VIEW</a> | <a href="#">RENEW</a> | <a href="#">EDIT</a></b></td>

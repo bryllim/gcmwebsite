@@ -22,9 +22,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('/members', function(){
-        return view('members');
-    })->name('members');
+    Route::get('/members', 'MemberController@index')->name('members');
+    Route::post('member-create', 'MemberController@create')->name('member-create');
+
 
     Route::get('/newmember', function(){
         return view('newmember');

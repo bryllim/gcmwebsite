@@ -121,12 +121,6 @@
                             <span>Members</span>
                         </a>
                     </li>
-                    <li class="{{ ( request()->routeIs('products') ) ? 'active' : '' }}">
-                        <a href="{{ route('home') }}">
-                            <i class="material-icons">local_drink</i>
-                            <span>Products</span>
-                        </a>
-                    </li>
                     <li class="header">OTHERS</li>
                     <li>
                         <a href="{{ route('logout') }}"
