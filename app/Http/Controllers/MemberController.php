@@ -3,26 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Member;
+use App\Transaction;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
 class MemberController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+    // For receipt
+    public $studentfee = 750;
+    public $regularfee = 750;
+    public $membershipfee = 250;
+    
     public function index()
     {
-        return view('members');
+        $members = Member::orderBy('updated_at', 'desc')->get();
+        $active = Member::where('validity', '>=', Carbon::now())->count();
+        Member::where('validity', '<', Carbon::now())->update(['status' => 'Expired']);
+
+        return view('members')->with([
+            "members" => $members,
+            "active" => $active
+            ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create(Request $request)
     {
         $member = new Member;
@@ -31,73 +35,95 @@ class MemberController extends Controller
         $member->address = $request->address;
         $member->contact = $request->contact;
         $member->sex = $request->sex;
-        $member->validity = Carbon::now()->addMonths($request->validity);
+        $member->validity = Carbon::now();
         $member->status = "Pending";
         $member->type = $request->type;        
 
         $imageName = time().'.'.$request->image->extension();  
         $request->image->move(public_path('images/members'), $imageName);
-        
         $member->image = $imageName;
 
         $member->save();
 
-        return redirect('/');
+        $amount = $request->validity * (($request->type == "Student")?$this->studentfee:$this->regularfee);
+        $grandtotal = $amount + $this->membershipfee;
+        $payment = [
+            "membershipfee" => $this->membershipfee,
+            "number"        => $request->validity,
+            "amount"        => $amount,
+            "grandtotal"    => $grandtotal
+        ];
+        
+        return view('receiptmember')
+             ->with([
+                 "member" => $member,
+                 "payment" => $payment
+                ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function initialPayment(Request $request)
     {
-        //
+
+        $member = Member::find($request->member_id);
+        $member->status = "Active";
+        $member->validity = Carbon::now()->addMonths($request->quantity);
+        $member->save();
+
+        $transaction = new Transaction;
+        $transaction->name = "Membership Fee";
+        $transaction->quantity = 1;
+        $transaction->price = $this->membershipfee;
+        $transaction->member_id = $request->member_id;
+        $transaction->save();
+
+        $transaction2 = new Transaction;
+        $transaction2->name = "Monthly Fee";
+        $transaction2->quantity = $request->quantity;
+        $transaction2->price = $request->quantity * (($member->type == "Student")?$this->studentfee:$this->regularfee);
+        $transaction2->member_id = $request->member_id;
+        $transaction2->save();
+
+        return redirect('members');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Member  $member
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Member $member)
+    public function viewMember($id)
     {
-        //
+        $member = Member::findOrFail($id);
+        $transactions = Transaction::where('member_id', $id)->orderBy('created_at', 'desc')->get();
+        return view('viewmember')->with(['member' => $member, 'transactions' => $transactions]);
+    }
+    
+    public function renew($id)
+    {
+        $member = Member::findOrFail($id);
+
+        return view('renew')->with(['member' => $member, 'studentfee' => $this->studentfee, 'regularfee' => $this->regularfee]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Member  $member
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Member $member)
+    public function extend(Request $request)
     {
-        //
+        $member = Member::findOrFail($request->member_id);
+        if($member->status == "Expired" || $member->status == "Pending"){
+            $member->validity = Carbon::now()->addMonths($request->number);
+            $member->status = "Active";
+        }else{
+            $validity = new Carbon($member->validity);
+            $member->validity = $validity->addMonths($request->number);
+        }        
+        $member->save();
+
+        $transaction = new Transaction;
+        $transaction->name = "Monthly Fee";
+        $transaction->quantity = $request->number;
+        $transaction->price = $request->number * (($member->type == "Student")?$this->studentfee:$this->regularfee);
+        $transaction->member_id = $request->member_id;
+        $transaction->save();
+
+        return redirect('members');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Member  $member
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Member $member)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Member  $member
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Member $member)
-    {
-        //
+    public function edit($id){
+        $member = Member::find($id);
+        return view('editmember')->with(['member' => $member]);
     }
 }

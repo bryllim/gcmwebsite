@@ -93,11 +93,9 @@
                         </div>
                     </div>
                     <div class="row"> 
-                        <form class="form-inline" action="">
-                            <div class="col-sm-12">
-                            <button type="submit" class="btn btn-block btn-lg btn-danger waves-effect"><b>Submit</b></button>
-                            </div>
-                        </form>
+                        <div class="col-sm-12">
+                        <button type="submit" class="btn btn-block btn-lg btn-danger waves-effect"><b>Submit</b></button>
+                        </div>
                     </div>        
                 </form>
             </div>

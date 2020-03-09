@@ -9,7 +9,7 @@
             </div>
             <div class="content">
                 <div class="text">TOTAL REVENUE</div>
-                <div class="number"><small>₱</small> <strong>35,234.00</strong></div>
+                <div class="number"><small>₱</small> <strong>{{ number_format($revenue, 2, '.', ',') }}</strong></div>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
             </div>
             <div class="content">
                 <div class="text">ACTIVE MEMBERS</div>
-                <div class="number"><strong>127</strong></div>
+                <div class="number"><strong>{{ $active }}</strong></div>
             </div>
         </div>
     </div>
@@ -30,8 +30,8 @@
                 <i class="material-icons">group_add</i>
             </div>
             <div class="content">
-                <div class="text">NEW MEMBERS</div>
-                <div class="number"><strong>25</strong></div>
+                <div class="text">NEW MEMBERS THIS MONTH</div>
+                <div class="number"><strong>{{ $newmembers }}</strong></div>
             </div>
         </div>
     </div>
@@ -56,15 +56,41 @@ var chart = new Chart(ctx, {
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         datasets: [{
-            label: 'Active Members',
+            label: 'New Members',
             backgroundColor: 'red',
             borderColor: 'black',
-            data: [0, 10, 5, 2, 20, 30, 45, 38, 23, 35, 56, 39]
+            data: [
+                {{ $graph_members['January'] }},
+                {{ $graph_members['February'] }},
+                {{ $graph_members['March'] }},
+                {{ $graph_members['April'] }},
+                {{ $graph_members['May'] }},
+                {{ $graph_members['June'] }},
+                {{ $graph_members['July'] }},
+                {{ $graph_members['August'] }},
+                {{ $graph_members['September'] }},
+                {{ $graph_members['October'] }},
+                {{ $graph_members['November'] }},
+                {{ $graph_members['December'] }},
+            ]
         },{
             label: 'Gym Revenue',
             backgroundColor: 'maroon',
             borderColor: 'black',
-            data: [39, 52, 23, 34, 20, 20, 35, 58, 13, 33, 55, 59]
+            data: [
+                {{ $graph_revenue['January'] }},
+                {{ $graph_revenue['February'] }},
+                {{ $graph_revenue['March'] }},
+                {{ $graph_revenue['April'] }},
+                {{ $graph_revenue['May'] }},
+                {{ $graph_revenue['June'] }},
+                {{ $graph_revenue['July'] }},
+                {{ $graph_revenue['August'] }},
+                {{ $graph_revenue['September'] }},
+                {{ $graph_revenue['October'] }},
+                {{ $graph_revenue['November'] }},
+                {{ $graph_revenue['December'] }},
+            ]
         }]
     },
 

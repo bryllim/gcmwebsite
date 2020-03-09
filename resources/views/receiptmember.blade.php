@@ -14,7 +14,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="body">
-                <h3 class="card-inside-title">Amount Due</h3>
+                <h3 class="card-inside-title">{{ $member->firstname }} {{ $member->lastname }} | Amount Due</h3>
                 <hr>
                 <div class="row" style="color:black">
                     <div class="col-md-12">
@@ -22,15 +22,15 @@
                             <tbody>
                                 <tr>
                                     <td>1x Membership Fee</td>
-                                    <th scope="row">₱250.00</th>
+                                    <th scope="row">₱{{ number_format($payment['membershipfee'], 2, '.', ',') }}</th>
                                 </tr>
                                 <tr>
-                                    <td>3x Monthly Fee</td>
-                                    <th scope="row">₱2,250.00</th>
+                                    <td>{{ $payment['number'] }}x Monthly Fee</td>
+                                    <th scope="row">₱{{ number_format($payment['amount'], 2, '.', ',') }}</th>
                                 </tr>
                                 <tr class="font-24">
                                     <td class="text-right">Grand Total:</td>
-                                    <th scope="row">₱2,500.00</th>
+                                    <th scope="row">₱{{ number_format($payment['grandtotal'], 2, '.', ',') }}</th>
                                 </tr>
                             </tbody>
                         </table>
@@ -38,14 +38,17 @@
                 </div>
                 <br>
                 <div class="row"> 
-                    <form class="form-inline" action="">
-                        <div class="col-sm-3">
-                        <button type="button" class="btn btn-block btn-lg waves-effect"><b>Cancel</b></button>
-                        </div>
-                        <div class="col-sm-9">
-                        <button type="button" class="btn btn-block btn-lg btn-danger waves-effect"><b>Submit</b></button>
-                        </div>
+                    <div class="col-sm-3">
+                    <button type="button" class="btn btn-block btn-lg waves-effect"><b>Cancel</b></button>
+                    </div>
+                    <div class="col-sm-9">
+                    <form method="POST" action="{{ route('initialPayment') }}">
+                    @csrf
+                        <input type="hidden" name="member_id" value="{{ $member->id }}">
+                        <input type="hidden" name="quantity" value="{{ $payment['number'] }}">
+                        <button type="submit" class="btn btn-block btn-lg btn-danger waves-effect"><b>Submit</b></button>
                     </form>
+                    </div>
                 </div>        
             </div>
         </div>

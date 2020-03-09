@@ -12,13 +12,13 @@
     <div class="col-md-3">
         <button type="button" class="btn btn-secondary btn-block" style="pointer-events: none;">
             <i class="material-icons text-muted">date_range</i>
-            <span>Date Today:&nbsp; <b>March 10, 2020</b></span>
+            <span>Date Today:&nbsp; <b>{{ date('F j, Y') }}</b></span>
         </button>
     </div>
     <div class="col-md-6">
         <button type="button" class="btn btn-secondary btn-block" style="pointer-events: none;">
             <i class="material-icons text-muted">group</i>
-            <span>Active Members:&nbsp; <b>145</b></span>
+            <span>Active Members:&nbsp; <b>{{ $active }}</b></span>
         </button>
     </div>
 </div>
@@ -39,31 +39,24 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @foreach($members as $member)
                         <tr>
-                            <td>Dela Cruz</td>
-                            <td>Juan</td>
-                            <td>Regular</td>
-                            <td>April 1, 2020</td>
-                            <td><span class="label bg-green">Active</span></td>
-                            <td><b><a href="{{ route('viewmember') }}">VIEW</a> | <a href="#">RENEW</a> | <a href="#">EDIT</a></b></td>
+                            <td>{{ $member->lastname }}</td>
+                            <td>{{ $member->firstname }}</td>
+                            <td>{{ $member->type }}</td>
+                            <td>{{ date('F j, Y', strtotime($member->validity)) }}</td>
+                            <td>
+                                @if($member->status == "Pending")
+                                <span class="label bg-blue">Pending</span>
+                                @elseif($member->status == "Expired")
+                                <span class="label bg-red">Expired</span>
+                                @else
+                                <span class="label bg-green">Active</span>
+                                @endif
+                            </td>
+                            <td><b><a href="{{ url('member') }}/{{ $member->id }}">VIEW</a> | <a href="{{ url('renew') }}/{{ $member->id }}">RENEW</a> | <a href="{{ url('edit') }}/{{ $member->id }}">EDIT</a></b></td>
                         </tr>
-                        <tr>
-                            <td>Kumar</td>
-                            <td>Ashnek Muhammed</td>
-                            <td>Student</td>
-                            <td>January 23, 2020</td>
-                            <td><span class="label bg-red">Expired</span></td>
-                            <td><b><a href="#">VIEW</a> | <a href="#">RENEW</a> | <a href="#">EDIT</a></b></td>
-                        </tr>
-                        <tr>
-                            <td>Vishuna</td>
-                            <td>Siddharta Gautma</td>
-                            <td>Student</td>
-                            <td>October 2, 2020</td>
-                            <td><span class="label bg-green">Active</span></td>
-                            <td><b><a href="#">VIEW</a> | <a href="#">RENEW</a> | <a href="#">EDIT</a></b></td>
-                        </tr>
-                       
+                    @endforeach
                     </tbody>
                 </table>
             </div>

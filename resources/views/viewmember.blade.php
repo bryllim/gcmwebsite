@@ -5,17 +5,19 @@
     <div class="col-md-12">
         <ol class="breadcrumb">
             <li><a href="{{ route('members') }}"><i class="material-icons">group</i> Members</a></li>
-            <li class="active">Juan Dela Cruz</li>
+            <li class="active">{{ $member->firstname }} {{ $member->lastname }}</li>
         </ol>
     </div>
 </div>
+@if($member->status == "Expired")
 <div class="row">
     <div class="col-md-12">
-        <div class="alert alert-warning text-center">
+        <div class="alert alert-danger text-center">
             <strong>Important!</strong> This member's membership validity has expired.
         </div>
     </div>
 </div>
+@endif
 <div class="row">
     <div class="col-md-5">
         <div class="card profile-card">
@@ -23,22 +25,25 @@
                 <div class="content-area">
                     <br>
                     <small>Personal Information</small>
-                    <h3>Juan Dela Cruz</h3>
+                    <h3>{{ $member->firstname }} {{ $member->lastname }}</h3>
                 </div>
+                <a href="javascript:void(0);" class="thumbnail">
+                    <img src="{{url('/images/members/'.$member->image)}}" class="img-responsive" style="max-height:300px">
+                </a>
             </div>
             <div class="profile-footer">
                 <ul>
                     <li>
                         <span>Contact Number</span>
-                        <span>09055210329</span>
+                        <span>{{ $member->contact }}</span>
                     </li>
                     <li>
                         <span>Sex</span>
-                        <span>Male</span>
+                        <span>{{ $member->sex }}</span>
                     </li>
                     <li>
                         <span>Address</span>
-                        <span>Sto. Nino Village, Banilad, Cebu City</span>
+                        <span>{{ $member->address }}</span>
                     </li>
                 </ul>
             </div>
@@ -50,7 +55,7 @@
                 <ul>
                     <li>
                         <div>
-                            Actions: <a href="#"><b>RENEW</b></a> | <a href="#"><b>EDIT</b></a>
+                            Actions: <a href="{{ url('renew') }}/{{ $member->id }}"><b>RENEW</b></a> | <a href="{{ url('edit') }}/{{ $member->id }}"><b>EDIT</b></a>
                         </div>
                     </li>
                     <li>
@@ -59,15 +64,12 @@
                             History
                         </div>
                         <div class="content" style="color:black">
+                        @foreach($transactions as $transaction)
                             <div class="font-12 well" style="border-radius: 5px; padding-left:10px; padding-top:10px; padding-bottom:2px; padding-right:10px; margin-bottom:3px">
-                                <p><span class="text-muted" style="float:right"><small><i class="material-icons font-12">access_time</i> March 12, 2020</small></span></p>
-                                <p style="margin-top: -5px">1x Monthly Fee - ₱750.00</p>
+                                <p><span class="text-muted" style="float:right"><small><i class="material-icons font-12">access_time</i> {{ date('F j, Y', strtotime($transaction->created_at)) }}</small></span></p>
+                                <p style="margin-top: -5px">{{ $transaction->quantity }}x {{ $transaction->name }} - ₱{{ number_format($transaction->price, 2, '.', ',') }}</p>
                             </div>
-                            <div class="font-12 well" style="border-radius: 5px; padding-left:10px; padding-top:10px; padding-bottom:2px; padding-right:10px; margin-bottom:3px">
-                                <p><span class="text-muted" style="float:right"><small><i class="material-icons font-12">access_time</i> January 3, 2020</small></span></p>
-                                <p style="margin-top: -5px">1x Annual Membership Fee - ₱250.00</p>
-                                <p style="margin-top: -5px">2x Monthly Fee - ₱1500.00</p>
-                            </div>
+                        @endforeach
                         </div>
                     </li>
                 </ul>
