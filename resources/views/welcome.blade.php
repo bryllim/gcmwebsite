@@ -32,6 +32,7 @@
             <ul class="nav navbar-nav menu_nav justify-content-end">
               <li class="nav-item"><a class="nav-link" href="#home">Home</a></li> 
               <li class="nav-item"><a class="nav-link" href="#announcements">Announcements</a></li> 
+              <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#paymentModal">Payments</a>
               <li class="nav-item"><a class="nav-link" href="#about">About</a>
             </ul>
 
