@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Http\Request; 
+use App\Announcement;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,33 +12,41 @@
 |
 */
 
-Route::get('/', ['middleware' => 'guest', function()
-{
+Route::get('/', function(){
     return view("welcome");
-}]);
-
-Auth::routes();
-
-Route::group(['middleware' => 'auth'], function () {
-
-    Route::get('/home', 'HomeController@index')->name('home');
-
-    Route::get('/members', 'MemberController@index')->name('members');
-    Route::post('/member-create', 'MemberController@create')->name('member-create');
-    Route::post('/initialPayment', 'MemberController@initialPayment')->name('initialPayment');
-    Route::get('/member/{id}', 'MemberController@viewMember')->name('viewMember');
-    Route::get('/renew/{id}', 'MemberController@renew')->name('renew');
-    Route::get('/edit/{id}', 'MemberController@edit')->name('edit');
-    Route::post('/extend', 'MemberController@extend')->name('extend');
-
-    Route::get('/newmember', function(){
-        return view('newmember');
-    })->name('newmember');
-
-    Route::get('/amountdue', function(){
-        return view('receiptmember');
-    })->name('amountdue');
-    
 });
+
+Route::get('/login', function(){
+    return view("login");
+});
+
+Route::post('login', function(Request $request){
+    if($request->password == "gcmadmin2020"){
+        return view('admin');
+    }else{
+        return view('login')->with(['error' => 'Wrong password!']);
+    }
+})->name('login');
+
+Route::post('createannouncement', function(Request $request){
+
+    $announcement = new Announcement;
+    $announcement->title = $request->title;
+    $announcement->content = $request->content;
+    $announcement->save();
+    
+    return view('admin')->with(['success' => 'Announcement created!']);
+
+})->name('createannouncement');
+
+Route::post('deleteannouncement', function(Request $request){
+
+    $announcement = Announcement::find($request->id);
+    $temp = $announcement->title;
+    $announcement->delete();
+    
+    return view('admin')->with(['deleted' => $temp.' deleted!']);
+
+})->name('deleteannouncement');
 
 

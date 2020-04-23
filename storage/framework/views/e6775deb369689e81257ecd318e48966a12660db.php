@@ -50,14 +50,8 @@
     <!-- Waves Effect Plugin Js -->
     <script src="<?php echo e(asset('plugins/node-waves/waves.js')); ?>"></script>
 
-    <!-- Jquery CountTo Plugin Js -->
-    <script src="<?php echo e(asset('plugins/jquery-countto/jquery.countTo.js')); ?>"></script>
-
     <!-- ChartJs -->
     <script src="<?php echo e(asset('plugins/chartjs/Chart.bundle.js')); ?>"></script>
-
-    <!-- Sparkline Chart Plugin Js -->
-    <script src="<?php echo e(asset('plugins/jquery-sparkline/jquery.sparkline.js')); ?>"></script>
 
     <!-- Custom Js -->
     <script src="<?php echo e(asset('js/admin.js')); ?>"></script>
@@ -76,7 +70,7 @@
     <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
-                <div class="spinner-layer pl-blue">
+                <div class="spinner-layer pl-red">
                     <div class="circle-clipper left">
                         <div class="circle"></div>
                     </div>
@@ -97,7 +91,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="bars"></a>
-                <img src="<?php echo e(asset('images/logo.png')); ?>" alt="" style="height:auto; width:300px; margin-top:-5px">
+                <img src="<?php echo e(asset('images/logo.png')); ?>" alt="" style="height:auto; width:300px; margin-top:-5px; margin-left:50px">
             </div>
         </div>
     </nav>
@@ -119,6 +113,12 @@
                         <a href="<?php echo e(route('home')); ?>">
                             <i class="material-icons">dashboard</i>
                             <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="<?php echo e(( request()->routeIs('members') ) ? 'active' : ''); ?>">
+                        <a href="<?php echo e(route('members')); ?>">
+                            <i class="material-icons">group</i>
+                            <span>Members</span>
                         </a>
                     </li>
                     <li class="header">OTHERS</li>
