@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.carousel.min.css') }}">
 
   <link rel="stylesheet" href="css/style.css">
+  <style>
+     .body{
+        background-size: cover;
+     }
+  </style>
 </head>
 <body>
 
