@@ -22,6 +22,7 @@
 <body>
 
   <!--================ Banner Section start =================-->
+  <hr>
   <section class="hero-banner text-center" id="home">
     <div class="container">
       <h1>GULLAS COLLEGE OF MEDICINE</h1>
@@ -34,6 +35,7 @@
       </form>
     </div>
   </section>
+  <hr>
   <!--================ Banner Section end =================-->
 
   <script src="{{ asset('vendors/jquery/jquery-3.2.1.min.js') }}"></script>
