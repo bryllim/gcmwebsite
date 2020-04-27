@@ -14,16 +14,19 @@
 
   <link rel="stylesheet" href="css/style.css">
   <style>
-     .body{
-        background-size: cover;
-     }
+     html { 
+          background: url(../img/banner/hero-banner-bg.png) no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
   </style>
 </head>
 <body>
 
   <!--================ Banner Section start =================-->
   <section class="hero-banner text-center" id="home">
-    <br><br>
     <div class="container">
       <h1>GULLAS COLLEGE OF MEDICINE</h1>
       <p class="hero-subtitle">Click the link below to open the payment portal.</p>
@@ -34,7 +37,6 @@
         <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
       </form>
     </div>
-    <br><br>
   </section>
   <!--================ Banner Section end =================-->
 
