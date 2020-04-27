@@ -22,8 +22,8 @@
 <body>
 
   <!--================ Banner Section start =================-->
-  <hr>
   <section class="hero-banner text-center" id="home">
+    <br><br>
     <div class="container">
       <h1>GULLAS COLLEGE OF MEDICINE</h1>
       <p class="hero-subtitle">Click the link below to open the payment portal.</p>
@@ -34,8 +34,8 @@
         <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
       </form>
     </div>
+    <br><br>
   </section>
-  <hr>
   <!--================ Banner Section end =================-->
 
   <script src="{{ asset('vendors/jquery/jquery-3.2.1.min.js') }}"></script>
