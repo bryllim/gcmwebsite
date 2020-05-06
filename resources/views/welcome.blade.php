@@ -1,36 +1,35 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Gullas College of Medicine</title>
-  <link rel="icon" href="img/favicon.png" type="image/png">
-  
-  <link rel="stylesheet" href="{{ asset('vendors/bootstrap/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('vendors/themify-icons/themify-icons.css') }}">
-  <link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.theme.default.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.carousel.min.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ asset('vendors/bootstrap/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendors/themify-icons/themify-icons.css') }}">
+<link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.theme.default.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.carousel.min.css') }}">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-  body{
-      background-image: url(../img/banner/hero-banner-bg.png) !important;
+body{
+  /* The image used */
+  background-image: url("test.png");
 
-      /* Full height */
-      height: 100% !important;
+  /* Full height */
+  height: 100%; 
 
-      /* Center and scale the image nicely */
-      background-position: center !important;
-      background-repeat: no-repeat !important;
-      background-size: cover !important;
-  }
-  </style>
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
 
-  <!--================ Banner Section start =================-->
-  <section class="hero-banner text-center" id="home">
+ <!--================ Banner Section start =================-->
+ <section class="hero-banner text-center" id="home">
   <br><br>
     <div class="container">
       <h1>GULLAS COLLEGE OF MEDICINE</h1>
@@ -45,12 +44,6 @@
     <br><br>
   </section>
   <!--================ Banner Section end =================-->
-
-  <script src="{{ asset('vendors/jquery/jquery-3.2.1.min.js') }}"></script>
-  <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('vendors/owl-carousel/owl.carousel.min.js') }}"></script>
-  <script src="{{ asset('js/jquery.ajaxchimp.min.js') }}"></script>
-  <script src="{{ asset('js/mail-script.js') }}"></script>
-  <script src="{{ asset('js/main.js') }}"></script>
+  
 </body>
 </html>
