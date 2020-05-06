@@ -13,6 +13,19 @@
   <link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.carousel.min.css') }}">
 
   <link rel="stylesheet" href="css/style.css">
+  <style>
+  body{
+      background-image: url(../img/banner/hero-banner-bg.png) !important;
+
+      /* Full height */
+      height: 100% !important;
+
+      /* Center and scale the image nicely */
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+  }
+  </style>
 </head>
 <body>
 
