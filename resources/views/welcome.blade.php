@@ -14,7 +14,7 @@ body, html {
 
 body{
   /* The image used */
-  background-image: url("test.png");
+  background-image: url("https://user-images.githubusercontent.com/37092544/81179919-effaf580-8fdc-11ea-94d2-9d313362673d.png");
 
   /* Full height */
   height: 100%; 
