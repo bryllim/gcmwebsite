@@ -1,49 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{{ asset('vendors/bootstrap/bootstrap.min.css') }}">
-<link rel="stylesheet" href="{{ asset('vendors/themify-icons/themify-icons.css') }}">
-<link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.theme.default.min.css') }}">
-<link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.carousel.min.css') }}">
 <style>
-body, html {
-  height: 100%;
-  margin: 0;
+html {
+    height: 100%;
 }
-
-body{
-  /* The image used */
-  background-image: url("https://user-images.githubusercontent.com/37092544/81179919-effaf580-8fdc-11ea-94d2-9d313362673d.png");
-
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+body {
+    background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 </style>
 </head>
 <body>
 
- <!--================ Banner Section start =================-->
- <section class="hero-banner text-center" id="home">
+  <div class="container text-center" style="color:white">
+    <h1 style="font-weight:700; margin-top:30%">GULLAS COLLEGE OF MEDICINE</h1>
+    <p class="hero-subtitle">Click the link below to open the payment portal.</p>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="WPECR874T96NL">
+      <input type="image" src="https://i.ya-webdesign.com/images/credit-card-accepted-png.png"  name="submit" alt="PayPal - The safer, easier way to pay online!" style="height:auto; width:70%">
+    </form>
+  </div>
   <br><br>
-    <div class="container">
-      <h1>GULLAS COLLEGE OF MEDICINE</h1>
-      <p class="hero-subtitle">Click the link below to open the payment portal.</p>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="WPECR874T96NL">
-        <input type="image" src="https://i.ya-webdesign.com/images/credit-card-accepted-png.png"  name="submit" alt="PayPal - The safer, easier way to pay online!">
-        <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-      </form>
-    </div>
-    <br><br>
-  </section>
-  <!--================ Banner Section end =================-->
-  
 </body>
 </html>
